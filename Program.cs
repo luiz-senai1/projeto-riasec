@@ -102,4 +102,5 @@ if (acesso == true)
 
     Console.WriteLine("");
 
+    perfil.Resultado();
 }
