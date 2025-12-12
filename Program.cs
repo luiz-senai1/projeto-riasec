@@ -13,16 +13,16 @@ bool acesso = false;
 while (rodando)
 {
     menu.MenuEntrar();
-    string escolhaEntrar = Console.ReadLine();
+    string? escolhaEntrar = Console.ReadLine();
     switch (escolhaEntrar)
     {
         case "1":
             int contador = 0;
             Console.WriteLine("Insira seu usuário");
-            string user = Console.ReadLine();
+            string? user = Console.ReadLine();
 
             Console.WriteLine("Insira sua senha");
-            string senha = Console.ReadLine();
+            string? senha = Console.ReadLine();
 
             Cadastro buscaCadastro = listaCadastro.Find(x => x.User == user);
 

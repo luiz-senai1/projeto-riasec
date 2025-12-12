@@ -27,3 +27,4 @@ C:\Users\159347624\Documents\projeto-riasec\projeto-riasec\obj\Debug\net8.0\refi
 C:\Users\159347624\Documents\projeto-riasec\projeto-riasec\obj\Debug\net8.0\atividade-riasec.pdb
 C:\Users\159347624\Documents\projeto-riasec\projeto-riasec\obj\Debug\net8.0\atividade-riasec.genruntimeconfig.cache
 C:\Users\159347624\Documents\projeto-riasec\projeto-riasec\obj\Debug\net8.0\ref\atividade-riasec.dll
+C:\Users\159347624\Documents\atividade-riasec\obj\Debug\net8.0\atividade-riasec.sourcelink.json

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\159347624\\Documents\\projeto-riasec\\projeto-riasec\\atividade-riasec.csproj": {}
+    "C:\\Users\\159347624\\Documents\\atividade-riasec\\atividade-riasec.csproj": {}
   },
   "projects": {
-    "C:\\Users\\159347624\\Documents\\projeto-riasec\\projeto-riasec\\atividade-riasec.csproj": {
+    "C:\\Users\\159347624\\Documents\\atividade-riasec\\atividade-riasec.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\159347624\\Documents\\projeto-riasec\\projeto-riasec\\atividade-riasec.csproj",
+        "projectUniqueName": "C:\\Users\\159347624\\Documents\\atividade-riasec\\atividade-riasec.csproj",
         "projectName": "atividade-riasec",
-        "projectPath": "C:\\Users\\159347624\\Documents\\projeto-riasec\\projeto-riasec\\atividade-riasec.csproj",
+        "projectPath": "C:\\Users\\159347624\\Documents\\atividade-riasec\\atividade-riasec.csproj",
         "packagesPath": "C:\\Users\\159347624\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\159347624\\Documents\\projeto-riasec\\projeto-riasec\\obj\\",
+        "outputPath": "C:\\Users\\159347624\\Documents\\atividade-riasec\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\159347624\\AppData\\Roaming\\NuGet\\NuGet.Config"
