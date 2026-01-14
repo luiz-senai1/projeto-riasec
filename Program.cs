@@ -1,106 +1,42 @@
 ﻿using atividade_riasec;
+using atividade_riasec.Modelos;
+using atividade_riasec.Menus;
+using atividade_riasec.Perfis;
 
-Menu menu = new();
-Perfil perfil = new();
-Cadastro cadastro = new();
-List<Cadastro> listaCadastro = new List<Cadastro>();
+MenuCadastro menuCadastro = new MenuCadastro();
 
-Console.WriteLine("Bem-Vindo ao RIASEC");
+Dictionary<int, Menu> opcoes = new();
+opcoes.Add(1, new MenuLogin(menuCadastro));
+opcoes.Add(2, menuCadastro);
+opcoes.Add(-1, new MenuSair());
 
-bool rodando = true;
-bool acesso = false;
+Menu menu = new Menu();
 
-while (rodando)
+void ExibirOpcoesMenu()
 {
-    menu.MenuEntrar();
-    string? escolhaEntrar = Console.ReadLine();
-    switch (escolhaEntrar)
+    menu.ExibirLogo();
+    Console.WriteLine("[1] - Entrar");
+    Console.WriteLine("[2] - Cadastro");
+    Console.WriteLine("[-1] - Sair");
+
+    Console.Write("\nDigite a sua opção: ");
+    string entrada = Console.ReadLine()!;
+    int entrada2 = Perfil.Converter(entrada);
+
+    if (opcoes.ContainsKey(entrada2))
     {
-        case "1":
-            int contador = 0;
-            Console.WriteLine("Insira seu usuário");
-            string? user = Console.ReadLine();
-
-            Console.WriteLine("Insira sua senha");
-            string? senha = Console.ReadLine();
-
-            Cadastro buscaCadastro = listaCadastro.Find(x => x.User == user);
-
-            if (buscaCadastro == null)
-            {
-                Console.WriteLine($"Não há cadastro!");
-                break;
-            }
-            else
-            {
-                if (senha != buscaCadastro.Senha)
-                {
-                    while (contador < 3)
-                    {
-                        contador++;
-
-                        Console.WriteLine("Insira sua senha");
-                        senha = Console.ReadLine();
-                    }
-                    if (contador == 3)
-                    {
-                        Console.WriteLine("Você bloquoou acesso! Espera 5 minutos para tentar novamente!");
-                        rodando = false;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Acesso permitido!");
-                    acesso = true;
-                    rodando = false;
-                }
-            }
-            break;
-        case "2":
-            Console.WriteLine("Insira seu usuário");
-            cadastro.User = Console.ReadLine();
-
-            Console.WriteLine("Insira sua senha");
-            cadastro.Senha = Console.ReadLine();
-
-            listaCadastro.Add(cadastro);
-
-            Console.WriteLine("Usuário cadastrado com sucesso!");
-            break;
+        Menu menu = opcoes[entrada2];
+        menu.Executar();
+        if (entrada2 > 0)
+        {
+            ExibirOpcoesMenu();
+        }
+    }
+    else
+    {
+        Console.WriteLine("Opção inválida!");
+        ExibirOpcoesMenu();
     }
 }
 
-if (acesso == true)
-{
-    perfil.Opcao();
-    perfil.Realista();
-
-    Console.WriteLine("");
-
-    perfil.Opcao();
-    perfil.Investigativo();
-    
-    Console.WriteLine("");
-
-    perfil.Opcao();
-    perfil.Artistico();
-
-    Console.WriteLine("");
-
-    perfil.Opcao();
-    perfil.Social();
-
-    Console.WriteLine("");
-
-    perfil.Opcao();
-    perfil.Empreendedor();
-
-    Console.WriteLine("");
-
-    perfil.Opcao();
-    perfil.Convencional();
-
-    Console.WriteLine("");
-
-    perfil.Resultado();
-}
+ExibirOpcoesMenu();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("atividade-riasec")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31a83146fd7da5a5878e4c58764d21dd44035e59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7373ffda41fdbb87a8b4c88baf027c62f3d43f7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("atividade-riasec")]
 [assembly: System.Reflection.AssemblyTitleAttribute("atividade-riasec")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
