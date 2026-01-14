@@ -14,29 +14,36 @@ Menu menu = new Menu();
 
 void ExibirOpcoesMenu()
 {
-    menu.ExibirLogo();
-    Console.WriteLine("[1] - Entrar");
-    Console.WriteLine("[2] - Cadastro");
-    Console.WriteLine("[-1] - Sair");
+    bool executando = true;
 
-    Console.Write("\nDigite a sua opção: ");
-    string entrada = Console.ReadLine()!;
-    int entrada2 = Perfil.Converter(entrada);
-
-    if (opcoes.ContainsKey(entrada2))
+    while (executando)
     {
-        Menu menu = opcoes[entrada2];
-        menu.Executar();
-        if (entrada2 > 0)
+        Console.Clear();
+        menu.ExibirLogo();
+        Console.WriteLine("[1] - Entrar");
+        Console.WriteLine("[2] - Cadastro");
+        Console.WriteLine("[-1] - Sair");
+
+        Console.Write("\nDigite a sua opção: ");
+        string entrada = Console.ReadLine()!;
+        int opcao = Perfil.Converter(entrada);
+
+        if (opcoes.ContainsKey(opcao))
         {
-            ExibirOpcoesMenu();
+            if (opcao == -1)
+            {
+                executando = false;
+            }
+
+            opcoes[opcao].Executar();
+        }
+        else
+        {
+            Console.WriteLine("Opção inválida!");
+            Console.ReadKey();
         }
     }
-    else
-    {
-        Console.WriteLine("Opção inválida!");
-        ExibirOpcoesMenu();
-    }
 }
+
 
 ExibirOpcoesMenu();

@@ -10,27 +10,18 @@ namespace atividade_riasec.Perfis;
 
 abstract internal class Perfil
 {
-    static Regex entradaValida = new Regex(@"^[0-4]$");
+    static Regex entradaValida = new Regex(@"^-?[0-4]$");
     public static int Converter(string entrada)
     {
-        if (entradaValida.IsMatch(entrada) && int.TryParse(entrada, out var valor))
+        while (true)
         {
-            return valor;
-
-        }
-        else
-        {
-            while (true)
+            if (entradaValida.IsMatch(entrada) && int.TryParse(entrada, out int valor))
             {
-                Console.WriteLine("Tente novamente Flexa >:) HAHAH");
-                Console.Write("");
-                entrada = Console.ReadLine()!;
-
-                if (entradaValida.IsMatch(entrada) && int.TryParse(entrada, out var valor1))
-                {
-                    return valor1;
-                }
+                return valor;
             }
+
+            Console.WriteLine("Tente novamente Flexa >:) HAHAH");
+            entrada = Console.ReadLine()!;
         }
     }
     public virtual void Executar()
